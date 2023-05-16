@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com">
+
+<mapper namespace="com.example.demo">
+    <select id="checkLike" resultType="int">
+        SELECT COUNT(*) FROM likes WHERE user_id = #{user_id} AND board_id = #{board_id}
+    </select>
+  
+    <insert id="insertLike">
+        INSERT INTO likes(user_id, board_id) VALUES(#{user_id}, #{board_id})
+    </insert>
+  
+    <delete id="deleteLike">
+        DELETE FROM likes WHERE user_id = #{user_id} AND board_id = #{board_id}
+    </delete>
+</mapper>
+
