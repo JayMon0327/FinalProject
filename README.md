@@ -54,57 +54,119 @@
 <br>
 
 ## 3. 기능 구현
-* #### `회원가입, 로그인, 마이페이지, AI챗봇`
-- #### 회원가입
-  - 이메일 인증을 통해 회원가입 진행 (비동기 처리)
-  - 제약조건 어노테이션을 활용해 유효성 검사
-- #### 로그인 / 임시 비밀번호 발급
-  - 일반 로그인: 회원가입한 이메일과 비밀번호를 통해 로그인
-  - 간편 로그인: 네이버, 카카오를 통해 로그인
-  - 회원가입한 아이디를 통해 임시 비밀번호 발급 (동기 처리)
-- #### 회원 정보 확인, 수정, 탈퇴 / 리뷰 작성 목록 / 포인트 내역 확인 가능한 `마이페이지`
-- #### 웹소켓 + CLOVA Chatbot API를 활용한 `챗봇`
-  * 작성된 시나리오의 흐름대로 진행
+* #### `[정서현] 회원가입, 로그인, 마이페이지, AI챗봇`
+  * 이메일 인증, 유효성 검사를 통한 회원가입
+  * 일반, 간편 로그인, 임시 비밀번호 발급 가능
+  * 챗봇 API를 통해 자주 묻는 질문 등록
 
-* #### `영수증 등록, 검색기능`
+* #### `[김규환] 영수증 등록, 검색기능`
   * 영수증, 카드내역을 통한 또 갔던 맛집 등록기능 
   * 2회 이상 등록된 맛집 검색기능 
 
-* #### `음식점 상세페이지`
+* #### `[최윤서] 음식점 상세페이지`
   * 음식점 상세정보 CRUD 기능 및 카테고리별 음식점 검색 기능
   * 상세페이지 URL 복사(for 공유하기)
   * 네이버 포털사이트 이동하여 해당 음식점 검색
   * 카카오 API 사용 ► 해당 음식점의 주소를 받아서 지도 띄우기 + 해당 음식점의 위치를 기반으로 카테고리별 장소 검색
 
-* #### `회원 커뮤니티`
+* #### `[추재영] 회원 커뮤니티`
   * 맛집에 관심이 있는 소비자가 이용하는 커뮤니티로, 리뷰 / 사진 / 지유게시판으로 나누어 유저 용도에 따라 세부 메뉴 분류
   * 각 게시판별 게시물 CRUD 기능 및 댓글 insert 기능
   * 리뷰게시판은 영수증 등록 여부를 체크하여 영수증 등록을 한 유저만 리뷰를 남길 수 있도록 제약사항을 추가하여 리뷰의 신뢰도를 강화함.
 
-* #### `사장 커뮤니티`
+* #### `[이후성] 사장 커뮤니티`
   * 구독 결제 시 사장회원등록, 결제내역 DB 저장
   * 결제내역 DB를 기반으로 데이터 선별하여 매출차트 및 재방문 차트 구현
   * 리뷰 AI 감정분석 차트 - 사용자들이 작성한 리뷰 데이터를 기반으로 AI 감정분석 API를 사용하여 감정분석 결과를 출력
   * 자유게시판 및 좋아요 기능- 게시글 수정, 검색 기능을 강화, '좋아요' 기능을 추가
 
-* #### `포인트 시스템`
+* #### `[함영휘] 포인트 시스템, 랭킹 시스템`
   * 영수증 등록 시 포인트 적립
   * 적립된 포인트를 사용해서 상품교환(기프티콘) SENS API 사용해서 문자로 전송
+  * 등록된 영수증을 카운트해서 많이 등록된 음식점 카테고리별 분류
 
-* #### `캘린더`
+* #### `[전혜진] 캘린더`
   * 방문 예정인 맛집 일정을 등록하고, 확인할 수 있는 캘린더 기능을 구현함.
 
 <br>
 
-<!-- ## 4. ERD 설계
-<img src="https://user-images.githubusercontent.com/123634960/242927505-6d8c1885-fd63-41a2-84c7-c521fcce39e7.png"  width="850" height="490">
+| **회원가입, 로그인, 마이페이지, AI챗봇** | **영수증 등록, 검색기능** |
+|:---:|:---:|
+| <img src ="https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/23a1ad5b-0408-42e4-918a-c7c7fb7b0934" width="440" height="260" /> | <img src ="https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/14686d48-6457-4f58-8576-043a581f158f" width="440" height="260" /> | 
+| **음식점 상세페이지** | **회원 커뮤니티** |
+| <img src ="https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/adf1449a-b016-4a5c-874a-8c7839490ca7" width="440" height="260" /> | <img src ="https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/eac545ae-84b0-4d6a-8d25-6ccd41ef3b17" width="440" height="260" /> | 
+| **사장 커뮤니티** | **포인트 시스템, 랭킹 시스템** |
+| <img src ="https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/97064c73-b97d-417d-9e33-54ca1a7a96b5" width="440" height="260" /> | <img src ="https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/3f370f44-47cb-480a-b433-5e885ff4f00d" width="440" height="260" /> | 
+| **캘린더** | 
+| <img src ="https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/1865cb93-c556-4752-8fb0-6547cf8e0c6b" width="440" height="260" /> 
 
 
-<br> -->
+<br>
 
-## 5. 핵심 기능 설명 & 트러블 슈팅
 
-#### 1. 이메일 인증, 간편 로그인, 챗봇 
+## 4. ERD 설계
+<img src="https://user-images.githubusercontent.com/123634960/242927505-6d8c1885-fd63-41a2-84c7-c521fcce39e7.png">
+
+<br>
+
+## 5. 시스템 아키텍쳐 구성도
+![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/0c1d4630-7673-4fc7-b995-e81dea7d1af6)
+
+<details>
+  <summary>아키텍쳐 설명 열어보기!</summary>
+
+<br>
+	
+  ### `아키텍쳐 설계에 대한 정리`
+* 📌 담당자 : 김규환 
+* 📌 https://docs.google.com/presentation/d/1ctdr4CTAJIyls9e24kb9k101kQK0VD6m/edit?usp=sharing&ouid=104520414346845957015&rtpof=true&sd=true
+* 📌 처음 배포를 하는 과정에서 많은 어려움과 난관에 봉착하였었지만 하나하나 해결해 나가며 AWS 아키텍쳐에 대한 이해가 높아졌습니다. 관련 세부사항은 27~28페이지부터 확인하실 수 있습니다.
+* **현재 https:://도메인. 으로 배포상태에 있으며, 사진 등록은 로그인 후에 이용하실 수 있습니다.**
+	
+**📌 필독 : 기본적으로 저희 프로젝트의 가용 범위는 강남 지역으로 한정하였습니다. 영수증에 나와있는 주소가 공공데이터포털의 서울시 강남구 일반 음식점 인허가 정보에 있는 가게의 주소를 기반으로 동작합니다.**
+**테스트를 위한 아이디, 비밀번호 그리고 영수증을 첨부할 예정이지만, 실제 서비스와 동일한 환경을 제공하기 위해 같은 영수증은 두 번 이상 등록하지 못하게 구현해 놓았습니다.** 
+**또한 같은 영수증을 다중으로 등록하는 것도 악용 사례에 해당하기 때문에 관련 데이터의 유효성 문제는 vkdls754@gmail.com 으로 연락 주시면 친절히 답변 드리겠습니다.**
+
+
+  #### `용어`
+  * 라우트53 : dns 도메인을 관리해주고 아이피로 변환해줍니다.
+  * 클라우드 프론트 : cdn , cache에 이점이 있습니다.(정적웹, 동적웹을 분리해주길 위한 역할)
+  * 인터넷 게이트웨이 :VPC와 인터넷 간의 통신을 가능하게 하며, 퍼블릭 서브넷의 리소스들이 인터넷에 직접 연결될 수 있도록 합니다.
+  * NAT 게이트웨이 : 개인 서브넷의 리소스들이 인터넷과 통신할 수 있도록 하는데, 주로 아웃바운드 트래픽에 사용됩니다.
+  * ALB(로드밸런서) : 부하를 분배해줍니다.
+  * Bastion : private subnet 에 직접 접근을 할 수 없는데 이를 통해 접속할 수 있게끔 해줍니다.
+  
+  #### `작동 순서`
+  * 클라이언트가 라우트 53 dns 서버를 거쳐 클라우드 프론트로 가게되면 클라우드 프론트에서는 도메인을 확인 후 인터넷게이트를 통해 로드밸런서에 접근하게 됩니다. 
+  * 요청한 페이지를 넷게이트웨이에서 공인아이피를 사설아이피로 변환 후 서브넷에 있는 인스턴스와 rds를 통해 가지고 오게 되는데
+  * 이때 요청페이지의 헤더에 (우리 페이지의 예시 index.jsp) html, css , 이미지 등이 클라우드 프론트는 S3를 호출하게 되고 데이터를 가져오게 됩니다.
+  * 따라서 (도메인은 cdn.matjavamatzip.click으로 설정후 각각의 cdn 호출 부분에 a태그, link를 바꿔줘야 합니다.) 이 파일들은 S3에 저장되게 됩니다.
+  * 나머지 동적 웹 데이터들은 순방향으로 인스턴스와 rds를 거쳐 다시 로드밸런서로 돌아오고 클라이언트로 응답을 해줍니다.	
+
+   #### `최종 설계, Next step`
+  * 부하 테스트에 따른 Scale Out과 보안을 위한 네트워크 분리는 반드시 이루어져야할 사항입니다.
+    현재 설계된 아키텍쳐에서는 몇가지 문제사항이 있습니다.
+
+  ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/c77c39bc-cb13-4a0b-82b1-9b9b9689fe9f)
+  * 서버가 뻗었을 때에 대책방안이 필요합니다. 로드밸런서로 부하를 분배하며, RDS failover 기능을 이용한 slave DB의 master 승격이 이루어져야합니다. 
+            부하테스트는 많은 툴이 있겠지만 ngrinder를 이용합니다. aws t3.micro 등은 부하테스트를 조금만 진행해도 서버가 죽을 것입니다. 
+            적당한 Scale Up 또한 필요합니다. 
+ 
+![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/3d9eedde-0251-4872-b9bd-09ae2d6706a7) 
+* 네트워크가 동일한 public subnet에 있다면 보안상 문제가 발생합니다. 외부에서 접근할 수 없도록  EC2 인스턴스와 RDS 인스턴스는 각각의 subnet에 위치하여야하고 관리자는 bastion을 통해 접근하여야합니다. 
+ 
+추가적으로 CICD (Continuous Integration/Continuous Delivery) : 프로젝트 배포와 테스트를 자동적으로 진행함에 따라 
+불필요한 노동력을 없앨 예정입니다. 
+</details>
+
+
+<br>
+
+<br>
+
+## 6. 핵심 기능 설명 & 트러블 슈팅
+
+#### 1) [정서현] 이메일 인증, 간편 로그인, 챗봇 
 <details>
   <summary>📌 핵심 기능 설명</summary>
   
@@ -116,9 +178,9 @@
   * 이메일 폼 작성 메소드에서 폼 작성하여 전송 메소드 호출하여 메일 전송 후 인증번호 리턴
   * 이메일 전송 메소드에 작성 폼을 받고, 메시지를 생성하여 입력된 이메일로 전송
   * **!!결과!!** 이메일 인증 버튼 클릭 시 인증번호가 담긴 메일 전송!
-  * [👉이미지로 전체 흐름 확인하기] ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/9ec3953e-49d4-4296-8884-4c1a01adec49)
+  * [👉전체 흐름 확인하기] ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/c8411f2d-ef56-445c-8480-08857edb88bf)
   * **활용** UUID를 생성하여 Low time 부분만 변수 선언 후 임시 비밀번호로 update하여 메일 전송
-  * [👉이미지로 전체 흐름 확인하기] ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/2fca5772-0e26-4c70-a188-240670c26717)
+  * [👉전체 흐름 확인하기] ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/947a2593-deb1-4395-98a1-7b24ae5fa4f2)
 
   
   ##### `2. OAuth 2.0 프로토콜 기반 사용자 인증 후 간편 로그인`
@@ -130,7 +192,7 @@
   * json으로 넘어온 값을 파싱하여 필요한 값을 dto에 저장
   * **!!결과!!** 회원 조회 후 없으면 자동 회원가입 진행, 있으면 세션에 아이디 저장 후 콜백 url로 리턴
     * 카카오 로그인은 전화번호를 받을 수 없어 마이페이지로 포워딩하여 정보 수정 받도록 진행
-  * [👉이미지로 전체 흐름 확인하기] ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/96bd4fc5-7253-48fe-a244-84ef74f00961)
+  * [👉전체 흐름 확인하기] ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/c70b1f03-d689-4eae-9294-5790c070832c)
 
   
   ##### `3. 웹소켓과 CLOVA API를 활용한 웹소켓`
@@ -142,20 +204,20 @@
   * javascript로 수신한 메시지 json을 파싱하여 description의 부분이 유저에게 보일 수 있도록 메소드 정의
   * 유저가 메인이 아닌 다른 페이지로 이동할 경우 연결 해제
   * **결과!!** 클로바 챗봇 API에 작성한 시나리오 흐름에 따라 FAQ 진행
-  * [👉이미지로 전체 흐름 확인하기] ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/28a77727-e1b5-4f1f-a267-bf5f4becc4b7)
+  * [👉전체 흐름 확인하기] ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/f0f21b16-226a-4f3f-9435-d3b723ebde7c)
 </details>
 
 <details>
   <summary>⚽ 트러블 슈팅</summary>
 
-  * `메시지 리턴 과정`, `간편 로그인 정보 저장`, `챗봇`에 관한 트러블 슈팅
+  * `메시지 리턴 과정`, `간편 로그인 정보 저장`, `챗봇` 에 관한 트러블 슈팅
 
   ### `1. 유효성 검사를 진행하며 지정한 메시지가 리턴되지 않음`
   #### ❓ 문제가 뭐지? - 문제 정의
   * 유효성 검사를 진행하여 에러가 발생했는데 에러 메시지가 아닌 null 값 출력
   * 404, 500 등 클라이언트, 서버의 오류는 없었고 이클립스 콘솔에 뜨는 에러도 없었음
   
-  #### ❓ 왜 이런 문제가 발생하지? - 원인 추론
+  #### ❓ 왜 이런 문제가 발생하지? - 가설 세우기
   1. request에 저장해서 view에 불렀는데, request의 저장된 값의 변수명이 다른가?
   2. 내가 리턴하는 방식에 문제가 있나?
   
@@ -164,7 +226,7 @@
        에러가 있을 시에 서비스에서 key=value 형태로 에러를 저장하는데, 저장한 map을 출력하여 테스트
        key에 내가 포맷한 이름 형태와 value에 내가 쓴 에러 메시지가 출력
        모델에 넣어서 전달하는 값도 동일하게 출력
-       => key의 값을 알request에서 get하는 변수명은 문제가 아니다!
+       => key의 값을 넣은 request에서 get하는 변수명은 문제가 아니다!
     
   #### 💡 이렇게 해서 해결! - 해결 방법 & 결과
     2. 리턴하는 방식의 문제 ⭕️ -> 리턴 방식 변경
@@ -201,7 +263,7 @@
   * BO의 승인 토큰을 얻는 과정에서 세션 검증용 값과 세션에 저장된 값이 동일하지 않아 null값을 리턴
   * 승인 토큰을 얻지 못해서 로그인이 실행되지 않고 500 상태의 오류 발생
   
-  #### ❓ 왜 이런 문제가 발생하지? - 원인 추론 
+  #### ❓ 왜 이런 문제가 발생하지? - 가설 세우기
   1. 세션에 값을 정하는 setter에서 잘못된 값을 저장하나?
     
   #### 💡 이렇게 해서 해결! - 해결 방법 & 결과
@@ -220,6 +282,11 @@
    * 어디서부터 잘못된 것인지 코드의 실행 순서를 반대로 올라가보니, 경로 비교하는 if문에서 null을 리턴하는 것을 파악
    * 이렇게 코드를 실행 순서의 반대로 올라가니 생각보다 빨리 해결할 수 있었음
    * 이 경험을 통해서 **코드의 실행 순서를 명확히 아는 것**이 얼마나 중요한지 알게 됨!
+  
+   #### 📖 To Be Next - 앞으로 같은 문제를 만나면
+  **이클립스의 디버깅을 활용**
+   * Debug 모드를 활용하여 break point를 먼저 찾아볼 것!
+     * 멘토 분께서 알려주신 방법
    
   ***
   
@@ -227,7 +294,7 @@
   #### ❓ 문제가 뭐지? - 문제 정의
   * 웹소켓 연결에 지정한 경로 값을 찾지 못해서 계속 연결 실패
   
-  #### ❓ 왜 이런 문제가 발생하지? - 원인 추론
+  #### ❓ 왜 이런 문제가 발생하지? - 가설 세우기
   1. handler의 endpoint로 지정한 경로의 문제인가?
   2. 컨트롤러의 매핑 값의 문제인가? 
   3. 전송된 데이터 자체를 인식 못해 생기는 문제인가?
@@ -271,7 +338,7 @@
   #### ❓ 문제가 뭐지? - 문제 정의
   * 웹소켓 연결과 챗봇 API의 시나리오대로 웰컴메시지는 뜨지만, 그 후에 버튼을 누르면 에러가 발생해 웹소켓이 자동으로 연결 해제
   
-  #### ❓ 왜 이런 문제가 발생하지? - 원인 추론
+  #### ❓ 왜 이런 문제가 발생하지? - 가설 세우기
   1. javascript 부분에 내가 close를 잘못 호출했나?
   2. API url을 요청했을 때 응답하는 코드가 200이 아닌가?
   3. 핸들러의 sendMessage 부분에 넘어오는 값이 없나?
@@ -303,13 +370,11 @@
   * 코드를 사용할때 무작정 붙여넣고, 공부하지 않는다면 어디서 에러가 발생하는지 찾느라 오랜 시간을 허비함
   * 그렇기 때문에 **코드의 흐름을 명확히 파악하고 사용하는 것이 중요**
   
-  ***
-  
 </details>
 
 <br>
 
-#### 2) 영수증 등록, 맛집 검색
+#### 2) [김규환] 영수증 등록, 맛집 검색
 <details>
   <summary>📌 핵심 기능 설명</summary>
 
@@ -469,14 +534,13 @@
 
 <br>
 
-#### 3) 음식점 상세페이지
+#### 3) [최윤서] 음식점 상세페이지
 <details>
   <summary>📌 핵심 기능 설명</summary>
 	
   ##### `1. 음식점 상세정보 CRUD 기능`
-  * 공공데이터 CSV 찾기 & mzlist테이블에 임의로 맛집으로 선정한 음식점들(약 25곳) 삽입
   * 이미지 저장
-	* 공공데이터의 데이터들 중, 임의로 맛집으로 선정한 음식점들(약 25곳)들의 이미지들을 5개씩 저장하여 resources 아래에 이미지 저장 
+	* 공공데이터의 데이터들 중, 맛집으로 선정한 음식점들(약 25곳)들의 이미지들을 5개씩 저장하여 resources 아래에 이미지 저장 
   * CRUD 기능
 	-> 주소 클릭 jsp -> MzlistMapper -> MzlistController -> MzlistDAO -> 상세페이지 jsp파일
 	* MzlistMapper
@@ -486,27 +550,45 @@
 	* MzlistDAO
 		* mzlist에서 landNumAddress를 기준으로 데이터를 조회해서 MzlistVO 객체로 반환하는 메서드 사용하여, landNumAddress에 대한 정보를 가져옴.
 	
-	
-  * 이미지 저장 및 출력
-	* 공공데이터의 데이터들 중, 임의로 맛집으로 선정한 음식점들(약 25곳)들의 이미지들을 5개씩 저장
-
-	
   * **‼결과‼** 주소를 전달하는 jsp 파일에서 쿼리스트링을 통해 주소를 요청하면 그 주소와 동일한 음식점의 데이터들이 검색되고, 상세페이지 jsp파일에 데이터들이 출력됨.
-<!--   * [👉이미지로 전체 흐름 확인하기](null) -->
+	![image](https://github.com/choioonseo/myproject1/assets/124110679/ba862026-b288-4f4b-ac10-a463834f2417)
 
-  ##### `2. 카테고리별 음식점 검색 기능` (위의 음식점 상세정보 CRUD 기능과 유사)
+
+	
+	
+  ##### `2. 카테고리별 음식점 검색 기능`
   * CRUD 기능
-	-> 주소 클릭 jsp -> MzlistMapper -> MzlistController -> MzlistDAO -> 상세페이지 jsp파일
+	-> 상세페이지 jsp 파일에서 카테고리별 음식점 이미지 클릭 -> MzlistMapper -> MzlistController -> MzlistDAO -> 카테고리별 음식점 jsp파일
+	* MzlistMapper
+		* select 문을 사용하여 mzlist 테이블의 모든 열을 조회하는 SQL 쿼리를 정의
+	* MzlistController
+		* 해당 경로로 요청이 들어오면 메서드가 실행되며, 'food' 파라미터를 받아와 출력하며, dao 객체의 메서드를 호출하여 food를 인자로 전달하고, 그 결과를 list에 저장하고, model에 list를 추가하여 화면에 전달
+	* MzlistDAO
+		* 메서드를 호출하여 SQL 쿼리를 실행하며, food를 인자로 전달하여 실행 결과를 출력하고 반환.
 
 	
   * **‼결과‼** 카테고리별 음식(한식, 중식, 일식, 분식 등..) 이미지 박스를 클릭하면 해당 음식점 카테고리 페이지로 이동하여 mzlist테이블에 저장되어 있는 해당 카테고리의 음식점들의 상세정보와 이미지들이 출력됨.
-<!--   * [👉이미지로 전체 흐름 확인하기](null) -->
+	![image](https://github.com/choioonseo/myproject1/assets/124110679/ac925293-ddb8-42da-8d11-6c4c2006f49c)
+
+	
 	
   ##### `3. 상세페이지 URL 복사(for 공유하기)`
 	-> 클립보드에 텍스트를 복사하는 기능
-  * 가상의 'texterea' 생성 -> textarea의 값을 복사할 텍스트로 설정 -> textarea를 DOM에 추가 -> textarea 내용을 선택 -> textarea를 DOM에서 제거
+  * 전체 흐름: 가상의 'texterea' 생성 -> textarea의 값을 복사할 텍스트로 설정 -> textarea를 DOM에 추가 -> textarea 내용을 선택 -> textarea를 DOM에서 제거 -> 복사 완료 메세지
+  * copyToClipboard() 함수 : 매개변수로 복사할 텍스트(text)를 받음
+  * 함수 내부에서는 복사할 텍스트를 가상의 <textarea> 엘리먼트에 설정함
+  * <textarea> 엘리먼트를 동적으로 생성하고 현재 페이지의 URL을 할당하며, URL은 window.location.href로 가져옴
+  * 복사할 텍스트를 <textarea>에 설정한 후, 해당 <textarea>를 DOM에 추가함
+  * <textarea> 내용을 선택하고, document.execCommand('copy')를 호출하여 선택한 내용을 클립보드로 복사함
+  * 마지막으로, <textarea>를 DOM에서 제거함
+  * 복사 완료 메시지를 alert 함수를 통해 사용자에게 표시됨
+	
 	
   * **‼결과‼** URL 복사(공유하기) 버튼을 클릭하면 'URL이 클립보드에 복사되었습니다' 라는 문구의 alert가 뜨며, 'copyToClipboard()' 함수를 호출하여 텍스트를 클립보드로 복사
+	![image](https://github.com/choioonseo/myproject1/assets/124110679/a3b2de6d-bc43-4c5f-9f58-0cb4c2f3d894)
+
+	
+	
 	
  ##### `4. 네이버 포털사이트 이동하여 해당 음식점 검색`
  	 -> location.href를 사용하여 생성된 URL로 페이지를 이동해서 사용자가 해당 음식점의 'landAddress'와 동일한 주소에 해당하는 네이버지도 URL로 이동할 수 있도록 함.
@@ -515,73 +597,177 @@
 	* encodeURIComponent() -> name, landAddress, roadAddress를 URL 인코딩하기 위함.
   * 변수 설정
 	* 'naverMapsURL' 변수를 생성해서 네이버 지도 URL을 할당
-  * location.href를 사용하여 생성된 URL로 페이지 이동
+		* if) 'landAddress'!= null 이면 해당 주소를 추가로 전달
+		* if) 'roadAddress'!= null 이면 해당 주소를 추가로 전달
 	
-  * **‼결과‼** 버튼을 클릭하면 name, landAddress, roadAddress를 인코딩하여 URL에 추가한 후 페이지를 이동   
-<!-- 	* [👉이미지로 전체 흐름 확인하기](null) -->
+  * location.href
+	* JavaScript에서 현재 문서의 URL을 나타내는 속성인 location.href를 사용하여 생성된 URL로 페이지 이동
+
+	
+  * **‼결과‼** 네이버 포털사이트로 이동하는 버튼을 클릭하면 해당 음식점의 정보와 주소를 URL에 인코딩하여 네이버 지도 페이지로 이동
+	![image](https://github.com/choioonseo/myproject1/assets/124110679/104534d8-a928-480b-8e88-f86d7fd0c317)
+
+	
+	
 	
  ##### `5. 카카오 API 사용'
- -> 해당 음식점의 주소를 받아서 지도 띄우기 + 해당 음식점의 위치를 기반으로 카테고리별 장소 검색
+ -> 해당 음식점의 주소를 받아서 지도 위의 마커 생성하기 + 해당 음식점의 위치를 기반으로 카테고리별 장소 검색
+	
    * 카카오 API 코드 분석
+		* 해당 음식점의 주소를 받아서 지도 띄우기
+		* address 변수를 선언하고, 해당 주소 변수를 초기화
+		* 주소값이 존재한다면 해당 변수 값을 할당하고, 값이 존재하지 않으면 빈 문자열로 설정
+		* geocoder.addressSearch() 함수를 통해 주소를 좌표로 변환하여 검색
+			* address에는 변환할 주소가 전달되고, 콜백 함수 내부에서 변환 결과를 처리
+	
 	
    * **‼결과‼** 상세정보페이지에 해당하는 음식점이 지도 위에 마커로 표시되며, 좌상단의 카테고리별 장소를 클릭하면 장소들이 마커 기준으로 근처에 있는 해당 장소들의 마커가 띄워지고, 마커를 클릭했을 때 카카오맵으로 이동됨.
-<!--    * [👉이미지로 전체 흐름 확인하기](null) -->
+	![image](https://github.com/choioonseo/myproject1/assets/124110679/b01a27ee-9d37-4d85-885b-acce8e4bfdb6)
+
 	
 </details>
 
 <details>
   <summary>⚽ 트러블 슈팅</summary>
+  * `일련의 규칙이 있는 이미지 출력 과정에서의 오류`, `NullPointException`, `URL복사기능에서의 오류`, `API사용과정에서의 오류`에 관한 트러블 슈팅
 
-<br>
+  ### `1. 일련의 규칙이 있는 이미지 출력 과정에서의 오류 `
+  #### ❓ 문제가 뭐지? - 문제 정의
+  * 카테고리별 음식점들이 출력되는 페이지를 구현하던 중, 각 음식점에 알맞은 이미지들이 출력되어야 하는데 동일한 한 군데의 음식점의 이미지들이 출력
+  
+  #### ❓ 왜 이런 문제가 발생하지? - 원인 추론
+  1. 해당 카테고리의 음식점들을 불러오는 과정에서 controller나 dao의 문제일까?
+  2. jsp 파일에서 이미지를 출력하는 방식의 문제일까?
+  
+  #### 이렇게 하면 해결되려나? - 시도
+    1.  해당 카테고리의 음식점들을 불러오는 과정에서 controller나 dao의 문제일까?
+       => Controller와 DAO에서 값들을 불러오는 과정상의 코드 오류는 없음. 또한, 다른 음식점 정보는 알맞게 출력이 되는데, 이미지에 관해서만 올바르지 않게 출력이 되는 것이므로 위와 같은 문제는 아님.
+		
+    2.  split()함수 사용
+	=> 구글링을 통해 split함수를 사용법에 대해 익힌 후 적용해보았지만, 역시나 이미지가 원활하게 출력이 안됨
+			
+		
+  #### 💡 이렇게 해서 해결! - 또다른 방식 
+    3.  split()함수를 사용할 때, 반복문을 통해서 새로운 배열의 주솟값을 출력해준다는 원리를 알게 되면서, split()함수를 사용하지 않고도 여태껏 배웠던 기본 개념인for문을 응용해서 이미지를 출력해보자는 생각을 하게 되었음. ⭕️
+	=> 반복문을 통해 각각의 MzlistVO 객체에서 이름과 번호를 가져와서, 이미지 태그의 src 속성을 동적으로 생성되어 이미지가 원활하게 출력됨.
+  
+		
+  #### 💡 왜 안 되었던 걸까? - 원인 분석
+    4. DB에 이미지 칼럼의 데이터가 올바르게 입력되어 있지 않았음 => 함수를 사용할 때 발생할 수 있는 주의점 체크 부족
+	split()함수를 사용할 때,유의사항에 대해 잘 파악하지 못했기 때문 !! 띄어쓰기를 기준으로 문자열을 구분한다고 했을 때, 빈 문자열도 분리 결과에 포함되기 때문에 DB의 이미지 주소들을 저장할 때에 맨 첫글자에도 띄어쓰기가 적용되므로 띄어쓰기 구분 등에 있어서 매우 유의했어야 했는데, 유의하지 않아서 오류가 발생했었음.
+  
+		
+  #### 📖 그래서 이런 지식을 얻었다! - 새로운 함수에 대한 학습
+  DB 하나의 데이터에 들어가 있는 여러 개의 주소값을 하나씩 출력할 때, 문자열을 구분해주는 split()함수 사용하여 데이터를 분리해줄 수 있다는 새로운 지식을 얻게 되었다. 다만, 앞으로는 함수를 사용할 때 유의사항도 정확하게 확인하여 오류 없이 진행하도록..
+  
+		
+  #### 📖 칭찬할 점! - 학습을 통한 적용능력
+  새롭게 알게 된 부분에 대해서 생각처럼 되지 않았을 때, 이를 활용해서 또 다른 방법을 모색함으로써 처리해나가면서 스스로 다른 방법에 대한 적용과 새로운 방법을 모색해나갔다!
+  
+		
+  #### split()함수
+  * 문자열을 특정 구분자를 기준으로 분리하여 배열로 반환하는 함수
+  * split() 함수는 문자열을 분리한 결과를 배열로 반환하며, 반환된 배열에는 분리된 각 부분 문자열이 포함되어 있음
+  * 주의사항
+	* 구분자가 연속해서 나타나는 경우, 빈 문자열도 분리 결과에 포함됨
+	* 구분자가 문자열의 시작 또는 끝에 위치하는 경우 빈 문자열이 반환된 배열에 포함될 수 있음
+			--> 위의 두 주의사항으로  split()함수를 적용하는 데에 실패했었음.
+
+  ***
 	
-  ##### `1. 일련의 규칙을 가진 이미지 출력 방법`
-	** 문제상황: 카테고리별 음식점 검색 기능 구현 중, 각 음식점에 알맞은 이미지들이 출력되어야 하는데 동일한 음식점의 이미지들이 출력
-	 -> 여러 이미지들을 DB에 저장하는 방식에 대한 고민 
-	 -> **!!이미지를 DB에 저장할 때 일련의 규칙을 정해서 이미지 저장 -> 일련의 규칙대로 이미지들을 분리하는 작업을 통해 해당 음식점들에 이미지 분배!!**
-	 -> mzlist테이블 중, 이미지 칼럼의 한 데이터 값에 여러 이미지 경로들을 저장해서, mapper파일을 통해 해당 mzlist테이블의 row를 읽을 때 그 음식점에 해당하는 이미지들이 모두 읽히도록 함.
 
-  * 첫 번째 시도 : 문자열을 특정 구분자를 기준으로 나누어 배열로 반환해주는 split 합수 사용 -> ❌비정상작동 
 	
-	<details>
-	 * 일련의 규칙을 가진 이미지 출력 방법은 여러가지가 될 수 있다. 
-	 첫 번째로 시도해 본 방법인 split함수를 사용하는 과정에서 오류가 생겨서 다른 방식을 채택했지만, split함수로도 충분히 구현할 수 있었다는 것을 뒤늦게 깨달았다. 
-	split 함수사용할 때의 주의점 중에서 이미지 경로들을 포함한 문자열에 공백이 포함되어 있는 경우, split 함수가 공백도 구분자로 인식하여 분리한다는 특징이 있었고, 이로 인한 오류였다는 것을 깨달았다.
-	split 함수에 대한 개념이해가 부족했었고, 함수를 사용할 때 개념과 특징을 잘 파악하고 사용한다면 오류를 잡는 데에 걸리는 시간을 단축할 수 있겠다는 생각을 하게 되었다. 하지만 첫 번째 시도에서 막히는 부분에 대해서 오랜 시간을 붙잡지 않고 또 다른 방법을 떠올려서 코드를 작성했다는 부분에 있어서 의의가 있다.
-	  </div>
+  ### `2. Null Point Exception `
+  #### ❓ 문제가 뭐지? - 문제 정의
+  * 메인페이지의 지도 위의 마커를 클릭했을 때 나의 상세페이지로 넘어오도록 구현하는 과정에서, no값이 아닌 landNumAddress를 기준으로 CRUD 기능이 수행되도록 변경하는 과정에서  Null Point Exception 발생
+  
+  #### ❓ 왜 이런 문제가 발생하지? - 원인 추론
+  1. no값을 통해 값을 전달하는 과정에서는 문제가 없었음, no 대신에 landNumAddress로 바꾸는 과정에서 파일 변경이 다 이루어지지 않아서 발생했을 것
+
+  #### 이렇게 하면 해결되려나? - 시도
+    1. no에서 landNumAddress로 바꾸는 작업이 mzlistMapper, mzlistController, mzlistDAO에도 모두 알맞게 반영이 되었는지 확인 -> 문제 ❌ , 모두 잘 반영됨.
+       
 	
-	 ##### `2. Null Point Exception`
-	** 문제상황: 메인페이지의 지도 위의 마커를 클릭했을 때 나의 상세페이지로 넘어오도록 구현하는 과정에서, no값이 아닌 landNumAddress를 기준으로 CRUD 기능이 수행되도록 변경하는 과정에서 null-point-exception 발생
+  #### 💡 이렇게 해서 해결! - 해결 방법 & 결과
+    2. 각각의 파일들이 알맞게 반영이 되었다면, 값이 어디에서 유실되었는지 체크해야 함
+ 	 * 첫 번째 시도 : controller 부분에서 값을 전달받을 때 system.out.println(vo)로 값을 출력해보면서 값이 유실된 지점을 체크 ->  landNumAddress와 model값이 전달될 때 값 전달⭕! dao.one()메서드가 null!!❌값을 반환
+ 	 * 두 번째 시도 : dao의 one 메서드가 올바르게 작성이 되었는지 확인 -> ⭕정상작동!
+ 	 * 세 번째 시도 : jsp파일에서 landNumAddress 파라미터를 정확하게 전달하고 있는지 확인 -> jsp에서 주소값을 입력하는 형식에 오류 발견 (' '로 인해 landNumAddress을 문자열로 인식)
+ 	 * 네 번째 시도 : jsp에서 주소값을 입력하는 형식 수정 -> ⭕정상작동!
+  
+  * 원래 코드 -> 수정 코드
+  * `<a href="mainpage/mzone?'landNumAddress=${vo.landNumAddress}'"` -> `<a href="mainpage/mzone?landNumAddress=${vo.landNumAddress}"`
+	* 작은따옴표 제거하여 주소값을 문자가 아닌 주소값으로 받을 수 있도록 변경
+  
+  #### 📖 그래서 이런 지식을 얻었다! - 태도
+  **오류가 생겼을 때, 차분하게 파일들부터 확인, 이상이 없다면 출력 과정에서 문제가 발견했을 것**
+  
+  ***
 	
-  * 첫 번째 시도 : no -> landNumAddress로 바꾸는 작업이 mzlistMapper, mzlistController, mzlistDAO에도 모두 알맞게 반영이 되었는지 확인 -> ⭕모두 반영됨!
-  * 두 번째 시도 : controller 부분에서 값을 전달받을 때 system.out.println(vo)로 값을 출력해보면서 값이 유실된 지점을 체크 ->  landNumAddress와 model값이 전달될 때 값 전달⭕! dao.one()메서드가 null!!❌값을 반환
-  * 세 번째 시도 : dao의 one 메서드가 올바르게 작성이 되었는지 확인 -> ⭕정상작동!
-  * 네 번째 시도 : jsp파일에서 landNumAddress 파라미터를 정확하게 전달하고 있는지 확인 -> jsp에서 주소값을 입력하는 형식에 오류 발견 (' '로 인해 landNumAddress을 문자열로 인식)
-  * 다섯 번째 시도 : jsp에서 주소값을 입력하는 형식 수정 -> ⭕정상작동!
-<details>
-  <summary>👉코드확인</summary>
-
-  <div markdown="1">    
-
-  ```java
-	'''
-	  //비정상 작동 코드
-	 if (${'vo.landNumAddress'} || '${vo.roadNameAddress}') {  
-	  geocoder.addressSearch(address, function(result, status) {
-
-	  
-	  //정상 작동 코드
-	  
-	if ('${vo.landNumAddress}' || '${vo.roadNameAddress}') {  
-	geocoder.addressSearch(address, function(result, status) {
-
-  ```
+		
+		
+  ### `3. URL복사를 할 때 해당 페이지가 뜨지만, 음식점 정보가 출력되지 않음 `
+  #### ❓ 문제가 뭐지? - 문제 정의
+  * URL복사 버튼을 눌렀을 때 해당 페이지와 동일한 주소가 복사되어야 하는데, 고정된 기본 URL 주소의 일부(변수: 'base_url') + 추가적으로 붙게 되는 URL(변수: 'url') 부분에서 기존의 주소와 다른 %등과 같은 추가 기호와 함께 변수가 그대로 출력되어서 주소가 일치하지 않음.
+  
+  #### ❓ 왜 이런 문제가 발생하지? - 원인 추론
+  1. ${vo.landNumAddress} 주소값을 제대로 전달되지 않았을 것
+  
+  #### 이렇게 하면 해결되려나? - 시도
+    1. 주소로 전달된 문자열에 포함될 수 있는 특수문자나 공백 등의 문제 ❌ 
+       encodeURIComponent()함수는  인자로 전달된 문자열을 URL에서 사용 가능한 형식으로 인코딩하도록 하는 함수이므로, URL에 포함될 수 있는 특수 문자나 공백 등을 안전하게 처리하여 URL이 유효하고 정확하게 동작할 수 있도록 함.
+       => 주소가 전달될 때 포함될 수 있는 특수문자나 공백의 문제는 아니다.
+		
+  #### 💡 이렇게 해서 해결! - 해결 방법 & 결과
+    2. 추가적으로 붙게 되는 URL 부분에서 주소 유효성 검사와 인코딩 문제가 아니므로 문제 없이 출력이 되어야 한다. ⭕️ -> 주소값을 출력할 때 형식에 맞게 올바른 형태로 출력하고 있는가
+  
+  * 원래 코드 -> 수정 코드
+  * `+ encodeURIComponent('{$vo.landNumAddress}')` -> `+ encodeURIComponent('${vo.landNumAddress}')`
+	* 이엘 태그 표기법 오류
+  
+  #### 📖 그래서 이런 지식을 얻었다! - 알게 된 점
+  올바른 이엘 태그 표기법
+	
+	
+	
+	
+	
+  ### `4. API사용과정에서의 오류 `
+  #### ❓ 문제가 뭐지? - 문제 정의
+  * api 코드를 이용하여 상세페이지 아래에 지도를 불러오는 기능을 구현하는 중, 지도가 호출되지 않음
+  
+  #### ❓ 왜 이런 문제가 발생하지? - 원인 추론
+  1. 사이트 도메인 등록 확인
+	kakao developers에 현재 사용하고 있는 사이트 도메인이 추가되어 있나? -> ⭕추가되어 있음!
+  2. api 코드상의 문제 -> 두 api를 합치는 과정에서 오류가 발생했을까?
+	
+  #### 이렇게 하면 해결되려나? - 시도
+  3. api 코드를 차분히 분석
+         * 첫 번째 분석 : 전체적인 api 코드의 흐름을 파악하고, api를 합치는 데에 중복되는 코드 제거 등 논리적 오류가 없음을 판단
+ 	 * 두 번째 분석 : 코드 상의 오류가 없는데 지도가 뜨지 않음 -> 지도의 범위를 지정해주지 않았기 때문일까?
+		
+  #### 💡 이렇게 해서 해결! - 해결 방법 & 결과
+  4. 생성된 지도를 화면상에 표시하기 위해 가로와 세로의 크기 지정하는 style을 적용 -> ⭕지도가 뜸!
+ 	 	=> 지도를 담고 있는 container영역에 대한 크기를 지정해주어야 했음
+	
+	
+  * 추가 작업한 코드
+  * mapContainer.style.width = '1000px'; / mapContainer.style.height = '500px';
+	
+  
+  #### 📖 그래서 이런 지식을 얻었다! - 알게 된 점
+api를 사용하는 방식에 대한 이해가 부족했던 것 같다. 처음에는 api의 코드를 사용하기만 하면 원하는대로 지도가 불러와지는 줄 알았는데, 
+카카오 지도를 생성할 때에 
+	1) 기능 객체를 담는 컨테이너, 2) 컨테이너에 대한 스타일 지정이 이루어져야 한다.
+기능 객체를 담는 컨테이너를 생성하여 해당 기능을 담고 있는 기능만을 제공하고 있었고, 
+추가적으로 컨테이너에 대한 스타일을 지정했어야 했다는 것을 알게 되었다.
 
 </details>
 </details>
 	
 <br>
 
-#### 4) 회원 커뮤니티
+#### 4) [추재영] 회원 커뮤니티
 <details>
   <summary>📌 핵심 기능 설명</summary>
 	
@@ -617,15 +803,15 @@
   * 리뷰 등록 시, 먼저 영수증 등록 정보를 writeReview.jsp 로 페이지 이동하여 출력해야되는데, receiptList (영수증의 리스트) 의 모든 요소가 null로 출력되는 문제가 발생함. 디버깅 했더니  receiptList의 size (리뷰할 영수증의 갯수) 는 정상적으로 콘솔창에 출력되고 있음.
 
 <details>
-  <summary>👉 문제가 있던 코드확인</summary>
+  <summary>👉 문제가 있던 쿼리 확인</summary>
   <div markdown="1">    
 
   ```java
 	<!-- 영수증 등록 정보를 가져오자 -->
 	<select id="getReceiptWithRestaurant" parameterType="String" resultType="MZRegisterReceiptDTO">
 		SELECT r.*, m.* 
-		FROM MAT_ZIP.mzregisterinfo m 
-		JOIN MAT_ZIP.restaurant r ON m.storePhoneNumber = r.tel 
+		FROM mzRegisterInfo m 
+		JOIN restaurant r ON m.storePhoneNumber = r.tel 
 		WHERE m.userID = #{user_id} 
 		AND m.no NOT IN 
 		(SELECT receipt_id FROM MAT_ZIP.cs_review)
@@ -666,7 +852,7 @@
   * **‼결과‼** MyBatis의 resultMap으로 쿼리 매핑에 성공함! DTO에 주입했던 mzRegisterInfoVO 와 restaurantVO 의 필드를 mzregisterinfo 테이블과 restaurant 테이블의 컬럼에 하나하나 수동 매핑해줌. 수동 매핑 후 쿼리를 좀 더 상세하게 작성하여 리뷰 작성 시 영수증 list를 출력하는지 테스트한 결과, 원하는대로 상호명과 주소 정보가 잘 출력되는 것을 확인함.
 	
 <details>
-  <summary>👉 수정하여 문제를 해결한 코드 확인 </summary>
+  <summary>👉 수정하여 문제를 해결한 쿼리 확인 </summary>
   <div markdown="1">    
 
   ```java
@@ -691,15 +877,15 @@
 	</resultMap>
 
 	<select id="getReceiptWithRestaurant" parameterType="String" resultMap="MZRegisterReceiptDTOMap">
-	    SELECT r.no as r_no, r.landNumAddress as r_landNumAddress, r.roadNameAddress as r_roadNameAddress,
-		   r.name as r_name, r.status as r_status, r.tel as r_tel, r.food as r_food,
-		   m.no as m_no, m.userId as m_userId, m.storeAddress as m_storeAddress,
-		   m.storePhoneNumber as m_storePhoneNumber, m.buyTime as m_buyTime
-	    FROM MAT_ZIP.mzregisterinfo m 
-	    JOIN MAT_ZIP.restaurant r ON m.storePhoneNumber = r.tel 
+	SELECT r.no as r_no, r.landNumAddress as r_landNumAddress, r.roadNameAddress as r_roadNameAddress,
+	           r.name as r_name, r.status as r_status, r.tel as r_tel, r.food as r_food,
+	           m.no as m_no, m.userId as m_userId, m.storeAddress as m_storeAddress,
+	           m.storePhoneNumber as m_storePhoneNumber, m.buyTime as m_buyTime
+	    FROM mzRegisterInfo m 
+	    JOIN restaurant r ON m.storePhoneNumber = r.tel 
 	    WHERE m.userID = #{user_id} 
 	    AND m.no NOT IN 
-	    (SELECT receipt_id FROM MAT_ZIP.cs_review)
+	    (SELECT receipt_id FROM cs_review)
 	</select>
   ```
 	  
@@ -708,7 +894,62 @@
 
   * **‼해석‼** MZRegisterInfoVO와 RestaurantVO의 각 필드와 SQL 쿼리 결과의 열을 매핑하기 위해 resultMap을 사용함. 
 	resultMap 내에서 association 태그를 사용하여 복합 DTO 내의 두 개의 객체를 따로 관리 진행하고, 또한 SQL 쿼리에서는 각 필드에 별칭(alias)을 사용하여 resultMap에서 참조할 수 있도록 하고, 별칭을 사용하여 SQL 결과의 열과 DTO의 속성을 연결함
-  * 보통은 resultType 을 이용하면 정상적으로 모델과 매핑할 수 있지만, 두개 이상 모델이나 다소 복잡한 DTO와 매핑을 진행할 때는 resultMap으로 세밀한 컨트롤을 하자! 라는 것을 학습.
+	
+<br>
+	
+  * 💡 추가 ► 업데이트한 쿼리를 보면, cs_review (리뷰게시글 저장 테이블) 을 IN 서브쿼리를 사용해 데이터를 가져오는 것을 볼 수 있는데, IN 서브쿼리를 사용하면 추후에 대량 데이터를 처리하게 되는 경우에 성능 이슈를 불러올 수 있다는 문제점이 있는 쿼리임. 대량의 데이터를 처리하지 않을거면 뭐 고치지 않아도 상관은 없지만, 쿼리 성능 향상을 위해 JOIN 절을 하나 더 사용해서 쿼리 업데이트를 진행함.
+	
+<details>
+  <summary>👉 성능을 업데이트한 쿼리 확인 </summary>
+  <div markdown="1">    
+
+  ```java
+	<!-- 영수증 등록 정보를 가져오자 -->
+	<resultMap id="MZRegisterReceiptDTOMap" type="com.mat.zip.board.MZRegisterReceiptDTO">
+	    <association property="mzRegisterInfoVO" javaType="com.mat.zip.registerAndSearch.model.MZRegisterInfoVO">
+		<result property="no" column="m_no" />
+		<result property="userId" column="m_userId" />
+		<result property="storeAddress" column="m_storeAddress" />
+		<result property="storePhoneNumber" column="m_storePhoneNumber" />
+		<result property="buyTime" column="m_buyTime" />
+	    </association>
+	    <association property="restaurantVO" javaType="com.mat.zip.registerAndSearch.model.RestaurantVO">
+		<result property="no" column="r_no" />
+		<result property="landNumAddress" column="r_landNumAddress" />
+		<result property="roadNameAddress" column="r_roadNameAddress" />
+		<result property="name" column="r_name" />
+		<result property="status" column="r_status" />
+		<result property="tel" column="r_tel" />
+		<result property="food" column="r_food" />
+	    </association>
+	</resultMap>
+
+	<select id="getReceiptWithRestaurant" parameterType="String" resultMap="MZRegisterReceiptDTOMap">
+	    SELECT 
+		    r.no as r_no, r.landNumAddress as r_landNumAddress, 
+		    r.roadNameAddress as r_roadNameAddress, r.name as r_name, 
+		    r.status as r_status, r.tel as r_tel, r.food as r_food,
+		    m.no as m_no, m.userId as m_userId, m.storeAddress as m_storeAddress,
+		    m.storePhoneNumber as m_storePhoneNumber, m.buyTime as m_buyTime
+		FROM 
+		    mzRegisterInfo m 
+		JOIN 
+		    restaurant r ON m.storePhoneNumber = r.tel 
+		LEFT JOIN
+		    cs_review cr ON m.no = cr.receipt_id
+		WHERE 
+		    m.userID = #{user_id} 
+		    AND cr.receipt_id IS NULL;
+	</select>
+  ```
+	  
+  </div>
+</details>
+	
+	
+  * **‼해석‼** MZRegisterInfoVO와 RestaurantVO의 각 필드와 SQL 쿼리 결과의 열을 매핑하기 위해 resultMap을 사용한 것은 동일함. 영수증별 1개의 리뷰만 작성 하기 위해 (중복리뷰, 도배리뷰 방지) 사용했던 cs_review 테이블을 IN 서브쿼리를 사용해서 데이터를 불러온 것을  LEFT JOIN 하여, m.no와 cr.receipt_id가 일치하는 항목을 찾는 쿼리임. 그런 다음 cr.receipt_id가 NULL인 항목, 즉 cs_review 테이블에 해당 영수증이 없는 항목만을 선택합니다. 결론은 이전 쿼리랑 실행시키는 기능은 똑같고, 대량의 데이터를 처리하는 상황에서 좀 더 효율적인 성능을 발휘시키기 위해 IN 서브쿼리 사용 부분을 JOIN을 사용하는 것으로 변경함.
+	
+  * **‼결론‼** 보통은 resultType 을 이용하면 정상적으로 모델과 매핑할 수 있지만, 두개 이상 모델이나 다소 복잡한 DTO와 매핑을 진행할 때는 resultMap으로 세밀한 컨트롤을 하자! 라는 것을 학습.
 
 	
 	
@@ -722,7 +963,7 @@
 	
 <br>
 
-#### 5) 사장 커뮤니티
+#### 5) [이후성] 사장 커뮤니티
 <details>
   <summary>📌핵심 기능 설명</summary>
   
@@ -831,7 +1072,7 @@
 	
 <br>
 
-#### 6) 포인트 시스템
+#### 6) [함영휘] 포인트 시스템, 랭킹 시스템
 <details>
   <summary>📌 핵심 기능 설명</summary>
 	
@@ -849,7 +1090,7 @@
   * Service 레이어에서 보유 포인트를 확인 후 상풍의 가격과 비교해서 보유 포인트가 적을 시 예외처리를 했습니다.
   * 보유 포인트를 확인 후 사용한 포인트를 DB에 저장하고, SENS API를 통해 MMS를 전송하게 됩니다.
   * @Transactional을 통해 예외 발생시 포인트 내역에 저장되기 전으로 롤백하도록 처리했습니다.(root-context에 Exception 설정을 추가해서 모든 예외 발생시 롤백되도록 설정했습니다)
-  * **‼결과‼** 보유 포인트가 충분하고, 상품 교환에 성공 시 팝업창을 통해 결과를 알려주고, 회원의 핸드폰번호로 MMS가 전송되게 됩니다. 
+  * **‼결과‼** 보유 포인트가 충분하고, 상품 교환에 성공 시 팝업창을 통해 결과를 알려주고, 회원의 핸드폰번호로 MMS가 전송되게 됩니다.  
 	
   ##### `3. 포인트 상세이력 관리`
   * 배민 우아한기술블로그 참고(https://techblog.woowahan.com/2587/) 도메인 로직을 참고해서 설계했습니다.
@@ -859,10 +1100,53 @@
   * poll을 이용해 List에 저장된 포인트를 상품의 가격과 비교하여 다시 상세 테이블에 저장하고, 상품의 가격이 0원이 되면 종료되는 로직을 구현했습니다.
   * 유효기간만료 이벤트가 발생하면 테이블의 적립아이디를 기준으로 GROUP BY해서 남은 금액을 만료 처리 하면됩니다.
   * 이렇게 하면 기존의 update 로직보다 상세한 이력관리가 가능합니다.
-  * ![image](https://github.com/chujaeyeong/MAT_ZIP_readme_chujy/assets/123634960/47e96e9a-1591-4ede-ac4a-bac002e21264)
-
-
 	
+* [👉포인트 교환 테스트 코드](https://github.com/Quokka2/codingtest/assets/99588377/d5c3f440-e121-4548-8a4d-b5823283fcc0)
+	
+ ##### `4. 랭킹 시스템(또슐랭 가이드)`
+ * mz_member, restaurant, mzregisterinfo, mzlist 테이블을 각각 JOIN해서 ranking 테이블에 insert
+ * ranking 테이블의 컬럼 (mzlist.no, mzregisterinfo.user_id, restaurant.name, mz_member.gender, mzlist.img)
+ * mzregisterinfo 테이블 + restaurant 테이블의 tel 컬럼이 같은 restaurant의 name 컬럼 JOIN
+ * restaurant 테이블 +  mzlist 테이블의 tel 컬럼이 같은 mzlist의 업체등록번호, 이미지 파일 이름 컬럼 JOIN
+ * mzregisterinfo 테이블 + mz_member 테이블의 user_id 컬럼이 같은 user_id 컬럼 JOIN
+ * 이벤트 스케줄러(Event Scheduler)를 생성해 매일 자정에 ranking 테이블에 영수증 등록된 업체 정보를 insert하는 SQL문 실행
+ * **‼결과‼** ranking 테이블에 있는 데이터를 카테고리별 select해서 메인 페이지 화면에 출력
+ * <details>
+	<summary>👉코드확인</summary>
+	<div markdown="1">
+		
+	 ```sql
+		#ranking 테이블 저장 Event Scheduler
+		CREATE EVENT daily_update_ranking
+		ON SCHEDULE EVERY 1 DAY STARTS CURDATE() + INTERVAL 1 DAY
+		DO
+   		INSERT INTO multi.ranking (no, user_id, name, gender, img)
+   		SELECT mzlist.`no` , mzregisterinfo.user_id, restaurant.name, mz_member.gender, mzlist.img
+   		FROM multi.mzregisterinfo
+   		INNER JOIN multi.restaurant ON mzregisterinfo.storePhoneNumber = restaurant.tel
+   		INNER JOIN multi.mzlist ON restaurant.tel = mzlist.tel
+   		INNER JOIN multi.mz_member ON mzregisterinfo.user_id = mz_member.user_id;
+		#카테고리별 5개 리스트 select
+		select `no`, name, img, count(name) as total from matzip.ranking
+		group by `no`, name, img
+		order by total desc
+		limit 5;
+
+		select `no`, name, img, count(name) as total from multi.ranking
+		where gender = '여'
+		group by `no`, name, img
+		order by total desc
+		limit 5;
+
+		select `no`, name, img, count(name) as total from multi.ranking
+		where gender = '남'
+		group by `no`, name, img
+		order by total desc
+		limit 5;
+	 ```
+	
+	</div>
+	</details>
 </details>
 
 <details>
@@ -923,7 +1207,7 @@
 
 <br>
 
-#### 7) 캘린더
+#### 7) [전혜진] 캘린더
 <details>
   <summary>📌 핵심 기능 설명</summary>
     
